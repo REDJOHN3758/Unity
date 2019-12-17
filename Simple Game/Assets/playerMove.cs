@@ -18,6 +18,7 @@ public class playerMove : MonoBehaviour
         {
             //rb.AddForce(new Vector3(5,0,0) * 5 * Time.deltaTime);
             rb.AddForce(transform.forward * 5);
+
         }
     }
 }
