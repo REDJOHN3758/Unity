@@ -16,7 +16,8 @@ public class playerMove : MonoBehaviour
     {
         if (Input.GetKeyDown("up"))
         {
-            rb.AddForce(new Vector3(5,0,0) * 5 * Time.deltaTime);
+            //rb.AddForce(new Vector3(5,0,0) * 5 * Time.deltaTime);
+            rb.AddForce(transform.forward * 5);
         }
     }
 }
