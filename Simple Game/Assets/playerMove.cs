@@ -17,21 +17,28 @@ public class playerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("up"))
-        {
-            //anim.SetTrigger("StartAnim");
-            //rb.AddForce(new Vector3(5,0,0) * 5 * Time.deltaTime);
-            //rb.AddForce(transform.forward * 5);
-            //rb.velocity = new Vector3(0, 0, 1) * speed * Time.deltaTime;
-            Movement1();
-        }
+        
     }
-
-    public void Movement1()
+    void FixedUpdate()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            rb.velocity = new Vector3(0, 0, 1) * speed;
+        }
 
-        transform.position = transform.position + new Vector3(horizontalInput * speed * Time.deltaTime, 0, verticalInput * speed * Time.deltaTime);
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            rb.velocity = new Vector3(0, 0, -1) * speed;
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            rb.velocity = new Vector3(1, 0, 0) * speed;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            rb.velocity = new Vector3(-1, 0, 0) * speed;
+        }
     }
 }
